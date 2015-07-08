@@ -5,7 +5,7 @@
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
-
+            this.sound = "";
             //up and down value
             this.x = 530;
         }

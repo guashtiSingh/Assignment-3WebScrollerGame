@@ -12,6 +12,7 @@ var objects;
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         function Cat(imageString) {
             _super.call(this, imageString);
+            this.sound = "";
             this.reset();
         }
         //Private Methods +++++++++++++++++++++++++++++++++++++

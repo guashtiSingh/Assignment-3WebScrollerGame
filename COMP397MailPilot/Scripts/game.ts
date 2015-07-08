@@ -79,11 +79,9 @@ function gameLoop() {
 
     for (var cat = 0; cat < 3; cat++) {
         cats[cat].update();
-        mouseAndCat(cats[cat]);
+        checkCollision(cats[cat]);
     }
-
-    mouseAndCheese();
-
+    checkCollision(cheese);
     stage.update();
 
     stats.end(); // end measuring
@@ -96,46 +94,24 @@ function distance(p1: createjs.Point, p2: createjs.Point): number {
 }
 
 //Check the distance between mouse and cheese
-function mouseAndCheese() {
+function checkCollision(gameObject: objects.GameObject) {
     var p1: createjs.Point = new createjs.Point;
     var p2: createjs.Point = new createjs.Point;
 
     p1.x = mouse.x;
     p2.y = mouse.y;
 
-    p2.x = cheese.x;
-    p2.y = cheese.y;
+    p2.x = gameObject.x;
+    p2.y = gameObject.y;
 
-    
-    if (distance(p1, p2) < (mouse.height * 0.5 + cheese.height * 0.5)) {
-        if (cheese.isColliding == false) {
-            createjs.Sound.play("yay");
+
+    if (distance(p1, p2) < (mouse.height * 0.5 + gameObject.height * 0.5)) {
+        if (gameObject.isColliding == false) {
+            createjs.Sound.play(gameObject.sound);
         }
-        cheese.isColliding = true; 
+        gameObject.isColliding = true;
     } else {
-        cheese.isColliding = false;
-    }
-}
-
-//Check the distance between mouse and cheese
-function mouseAndCat(cat: objects.Cat) {
-    var p1: createjs.Point = new createjs.Point;
-    var p2: createjs.Point = new createjs.Point;
-
-    p1.x = mouse.x;
-    p2.y = mouse.y;
-
-    p2.x = cat.x;
-    p2.y = cat.y;
-
-
-    if (distance(p1, p2) < (mouse.height * 0.5 + cat.height * 0.5)) {
-        if (cat.isColliding == false) {
-            createjs.Sound.play("");
-        }
-        cat.isColliding = true;
-    } else {
-        cat.isColliding = false;
+        gameObject.isColliding = false;
     }
 }
 
