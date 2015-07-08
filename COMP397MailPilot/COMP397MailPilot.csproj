@@ -97,6 +97,7 @@
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\objects\cat.ts" />
     <TypeScriptCompile Include="Scripts\objects\cheese.ts" />
+    <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\ocean.ts" />
     <TypeScriptCompile Include="Scripts\objects\mouse.ts" />
     <TypeScriptCompile Include="Scripts\objects\wood.ts" />

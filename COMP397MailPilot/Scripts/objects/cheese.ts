@@ -1,19 +1,11 @@
 ﻿module objects {
     //Cheese Class ++++++++++++++++++++++++++++++++++++++++++++
-    export class Cheese extends createjs.Bitmap {
-        //Public properties ++++++++++++++++++++++++++++++++++
-        width: number;
-        height: number;
-        dx: number = 5;
-        isColliding; boolean = false;
+    export class Cheese extends objects.GameObject {
         
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
-            this.regX = this.width * 0.5;
-            this.regY = this.width * 0.5;
+            this.dx = 5;
 
             this.reset();
         }

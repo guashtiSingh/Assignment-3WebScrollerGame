@@ -12,10 +12,6 @@ var objects;
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         function Mouse(imageString) {
             _super.call(this, imageString);
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
-            this.regX = this.width * 0.5;
-            this.regY = this.width * 0.5;
             //up and down value
             this.x = 530;
         }
@@ -24,7 +20,7 @@ var objects;
             this.y = stage.mouseY; //position Mouse under mouse
         };
         return Mouse;
-    })(createjs.Bitmap);
+    })(objects.GameObject);
     objects.Mouse = Mouse;
 })(objects || (objects = {}));
 //# sourceMappingURL=mouse.js.map

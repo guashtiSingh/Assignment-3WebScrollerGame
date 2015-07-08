@@ -13,11 +13,6 @@ var objects;
         function Cheese(imageString) {
             _super.call(this, imageString);
             this.dx = 5;
-            this.boolean = false;
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
-            this.regX = this.width * 0.5;
-            this.regY = this.width * 0.5;
             this.reset();
         }
         //Private Methods +++++++++++++++++++++++++++++++++++++
@@ -37,7 +32,7 @@ var objects;
             this.checkBounds();
         };
         return Cheese;
-    })(createjs.Bitmap);
+    })(objects.GameObject);
     objects.Cheese = Cheese;
 })(objects || (objects = {}));
 //# sourceMappingURL=cheese.js.map

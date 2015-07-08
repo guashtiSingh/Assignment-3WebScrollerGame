@@ -4,6 +4,7 @@
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 
+/// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/wood.ts" />
 /// <reference path="objects/mouse.ts" />
 /// <reference path="objects/cheese.ts" />
@@ -20,7 +21,10 @@ var manifest = [
     { id: "wood", src: "assets/images/wood.jpg" },
     { id: "mouse", src: "assets/images/mouse.png" },
     { id: "cheese", src: "assets/images/cheese.png" },
-    { id: "cat", src: "assets/images/cat.png" }
+    { id: "cat", src: "assets/images/cat.png" },
+    { id: "yay", src: "assets/audio/yay.ogg" },
+    { id: "thunder", src: "assets/audio/thunder.ogg" },
+    { id: "engine", src: "assets/audio/engine.ogg" }
 ];
 
 // Game Variables
@@ -72,8 +76,10 @@ function gameLoop() {
     wood.update();
     mouse.update();
     cheese.update();
+
     for (var cat = 0; cat < 3; cat++) {
         cats[cat].update();
+        mouseAndCat(cats[cat]);
     }
 
     mouseAndCheese();
@@ -103,11 +109,33 @@ function mouseAndCheese() {
     
     if (distance(p1, p2) < (mouse.height * 0.5 + cheese.height * 0.5)) {
         if (cheese.isColliding == false) {
-            console.log("collision!");
+            createjs.Sound.play("yay");
         }
         cheese.isColliding = true; 
     } else {
         cheese.isColliding = false;
+    }
+}
+
+//Check the distance between mouse and cheese
+function mouseAndCat(cat: objects.Cat) {
+    var p1: createjs.Point = new createjs.Point;
+    var p2: createjs.Point = new createjs.Point;
+
+    p1.x = mouse.x;
+    p2.y = mouse.y;
+
+    p2.x = cat.x;
+    p2.y = cat.y;
+
+
+    if (distance(p1, p2) < (mouse.height * 0.5 + cat.height * 0.5)) {
+        if (cat.isColliding == false) {
+            createjs.Sound.play("");
+        }
+        cat.isColliding = true;
+    } else {
+        cat.isColliding = false;
     }
 }
 
