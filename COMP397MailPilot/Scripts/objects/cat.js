@@ -12,6 +12,7 @@ var objects;
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         function Cat(imageString) {
             _super.call(this, imageString);
+            this.boolean = false;
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;

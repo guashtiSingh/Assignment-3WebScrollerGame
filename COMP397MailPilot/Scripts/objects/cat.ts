@@ -6,6 +6,7 @@
         height: number;
         dy: number;
         dx: number;
+        isColliding; boolean = false;
         
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {

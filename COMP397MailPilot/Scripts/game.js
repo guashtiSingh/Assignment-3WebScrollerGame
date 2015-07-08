@@ -62,12 +62,31 @@ function gameLoop() {
     for (var cat = 0; cat < 3; cat++) {
         cats[cat].update();
     }
+    mouseAndCheese();
     stage.update();
     stats.end(); // end measuring
 }
-// Callback function that allows me to respond to button click events
-function pinkButtonClicked(event) {
-    createjs.Sound.play("clicked");
+//distance utility function
+function distance(p1, p2) {
+    return Math.floor(Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.x - p1.x), 2)));
+}
+//Check the distance between mouse and cheese
+function mouseAndCheese() {
+    var p1 = new createjs.Point;
+    var p2 = new createjs.Point;
+    p1.x = mouse.x;
+    p2.y = mouse.y;
+    p2.x = cheese.x;
+    p2.y = cheese.y;
+    if (distance(p1, p2) < (mouse.height * 0.5 + cheese.height * 0.5)) {
+        if (cheese.isColliding == false) {
+            console.log("collision!");
+        }
+        cheese.isColliding = true;
+    }
+    else {
+        cheese.isColliding = false;
+    }
 }
 // Our Main Game Function
 function main() {
