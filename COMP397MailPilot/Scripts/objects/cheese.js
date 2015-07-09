@@ -13,7 +13,7 @@ var objects;
         function Cheese(imageString) {
             _super.call(this, imageString);
             this.dx = 5;
-            this.sound = "";
+            this.sound = "win";
             this.reset();
         }
         //Private Methods +++++++++++++++++++++++++++++++++++++

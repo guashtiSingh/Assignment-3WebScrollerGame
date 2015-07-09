@@ -4,6 +4,7 @@
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 
+/// <reference path="utility/utility.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/wood.ts" />
 /// <reference path="objects/mouse.ts" />
@@ -87,12 +88,6 @@ function gameLoop() {
     stats.end(); // end measuring
 }
 
-//distance utility function
-function distance(p1: createjs.Point, p2: createjs.Point): number {
-
-    return Math.floor(Math.sqrt(Math.pow((p2.x - p1.x),2) + Math.pow((p2.x - p1.x), 2)));
-}
-
 //Check the distance between mouse and cheese
 function checkCollision(gameObject: objects.GameObject) {
     var p1: createjs.Point = new createjs.Point;
@@ -105,7 +100,7 @@ function checkCollision(gameObject: objects.GameObject) {
     p2.y = gameObject.y;
 
 
-    if (distance(p1, p2) < (mouse.height * 0.5 + gameObject.height * 0.5)) {
+    if (utility.distance(p1, p2) < (mouse.height * 0.5 + gameObject.height * 0.5)) {
         if (gameObject.isColliding == false) {
             createjs.Sound.play(gameObject.sound);
         }

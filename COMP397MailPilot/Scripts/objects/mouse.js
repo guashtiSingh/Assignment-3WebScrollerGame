@@ -12,7 +12,7 @@ var objects;
         //Constructor ++++++++++++++++++++++++++++++++++++++++
         function Mouse(imageString) {
             _super.call(this, imageString);
-            this.sound = "";
+            this.sound = "background";
             //up and down value
             this.x = 530;
         }
