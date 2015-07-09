@@ -10,9 +10,10 @@ var objects;
     var Mouse = (function (_super) {
         __extends(Mouse, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function Mouse(imageString) {
-            _super.call(this, imageString);
-            //this.sound = "backgroundMusic";
+        function Mouse() {
+            _super.call(this, "mouse");
+            this.sound = "backgroundMusic";
+            this.name = "mouse";
             //up and down value
             this.x = 530;
             createjs.Sound.play(this.sound, { "loop": -1 });

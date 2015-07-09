@@ -1,5 +1,5 @@
 ﻿module objects {
-    // Cloud Class ++++++++++++++++++++++++++++++++++++++
+    
     export class GameObject extends createjs.Sprite {
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++
         public width: number;
@@ -19,6 +19,7 @@
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
+            this.isColliding = false;
         }
 
     }

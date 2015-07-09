@@ -2,11 +2,11 @@
     // Mouse Class ++++++++++++++++++++++++++++++++++++++
     export class Mouse extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        constructor(imageString: string) {
-            super(imageString);
+        constructor() {
+            super("mouse");
 
-            //this.sound = "backgroundMusic";
-            
+            this.sound = "backgroundMusic";
+            this.name = "mouse";
             //up and down value
             this.x = 530;
 

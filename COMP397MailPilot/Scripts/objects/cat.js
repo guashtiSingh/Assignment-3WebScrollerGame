@@ -10,10 +10,10 @@ var objects;
     var Cat = (function (_super) {
         __extends(Cat, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function Cat(imageString) {
-            _super.call(this, imageString);
+        function Cat() {
+            _super.call(this, "cat");
             this.name = "cat";
-            //this.sound = "meow";
+            this.sound = "meow";
             this.reset();
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
@@ -31,8 +31,8 @@ var objects;
         };
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         Cat.prototype.update = function () {
-            this.y += this.dy; // moves cloud down the stage
-            this.x += this.dx; // drifts cloud right and left
+            this.y += this.dy; // moves cat side the stage
+            this.x += this.dx; // drifts cat right and left
             this.checkBounds();
         };
         return Cat;

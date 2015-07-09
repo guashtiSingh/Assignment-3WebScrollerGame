@@ -3,23 +3,33 @@
         // PUBLIC PROPERTIES
         public score: number = 0;
         public lives: number = 5;
+        private game: createjs.Container;
 
-        private scoreLabel: createjs.Text;
-        private livesLabel: createjs.Text;
+        private scoreLabel: createjs.BitmapText;
+        private livesLabel: createjs.BitmapText;
 
         // CONSTRUCTOR +++++++++++++++++++
-        constructor() {
-            this.livesLabel = new createjs.Text("Lives:", "40px Consolas", "#FFFF00");
-            this.scoreLabel = new createjs.Text("Score:", "40px Consolas", "#FFFF00");
-            this.scoreLabel.x = 350;
+        constructor(game: createjs.Container) {
+
+            this.livesLabel = new createjs.BitmapText("LIVES: ", assets.fontAtlas);
+            this.livesLabel.scaleX = 0.4;
+            this.livesLabel.scaleY = 0.4;
+            this.livesLabel.x = 10;
+            this.livesLabel.y = 10;
             game.addChild(this.livesLabel);
+
+            this.scoreLabel = new createjs.BitmapText("SCORE: ", assets.fontAtlas);
+            this.scoreLabel.scaleX = 0.4;
+            this.scoreLabel.scaleY = 0.4;
+            this.scoreLabel.x = 350;
+            this.scoreLabel.y = 10;
             game.addChild(this.scoreLabel);
         }
 
         // PUBLIC METHODS +++++++++++++++++
         public update() {
-            this.livesLabel.text = "Lives: " + this.lives;
-            this.scoreLabel.text = "Score: " + this.score;
+            this.livesLabel.text = "LIVES: " + this.lives.toString();
+            this.scoreLabel.text = "SCORE: " + this.score.toString();
         }
     }
 } 

@@ -3,11 +3,10 @@
     export class Cat extends objects.GameObject {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        constructor(imageString: string) {
-            super(imageString);
-
+        constructor() {
+            super("cat");
             this.name = "cat";
-            //this.sound = "meow";
+            this.sound = "meow";
 
             this.reset();
         }
@@ -31,8 +30,8 @@
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
 
-            this.y += this.dy; // moves cloud down the stage
-            this.x += this.dx; // drifts cloud right and left
+            this.y += this.dy; // moves cat side the stage
+            this.x += this.dx; // drifts cat right and left
             this.checkBounds();
         }
     }

@@ -1,10 +1,9 @@
-﻿
-module objects {
+﻿module objects {
     // Cheese Class ++++++++++++++++++++++++++++++++++++++
     export class Cheese extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        constructor(imageString: string) {
-            super(imageString);
+        constructor() {
+            super("cheese");
 
             this.name = "cheese";
             this.sound = "cheesesound";

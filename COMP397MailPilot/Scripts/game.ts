@@ -4,7 +4,7 @@
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 
-/// <reference path="utility/utility.ts" />
+
 /// <reference path="managers/asset.ts" />
 
 /// <reference path="objects/gameobject.ts" />
@@ -13,18 +13,30 @@
 /// <reference path="objects/cheese.ts" />
 /// <reference path="objects/cat.ts" />
 
-/// <reference path="objects/scoreboard.ts" />
-
 /// <reference path="managers/collision.ts" />
 
+/// <reference path="objects/label.ts" />
+/// <reference path="objects/button.ts" />
+/// <reference path="objects/scoreboard.ts" />
+
+/// <reference path="states/gameover.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/menu.ts" />
+
 
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage: createjs.Stage;
 var stats: Stats;
-var game: createjs.Container;
 
+// Score Variables
+var finalScore: number = 0;
+var highScore: number = 0;
+
+// State Variables
+var currentState: number;
+var currentStateFunction: any;
+var stateChanged: boolean = false;
 
 // Game Variables
 var wood: objects.Wood;
@@ -34,19 +46,19 @@ var cats: objects.Cat[] = [];
 
 var scoreboard: objects.ScoreBoard;
 
-
 // Game Managers
 var assets: managers.Asset;
 var collision: managers.Collision;
 
-// Game States
+// Game Objects
+var gameOver: states.GameOver;
 var play: states.Play;
+var menu: states.Menu;
 
 // Preloader Function
 function preload() {
     // instantiate asset manager class
     assets = new managers.Asset();
-
 
     //Setup statistics object
     setupStats();
@@ -54,14 +66,15 @@ function preload() {
 
 // Callback function that initializes game objects
 function init() {
-    stage = new createjs.Stage(canvas); // reference to the stage
-    stage.enableMouseOver(20);
-    createjs.Ticker.setFPS(60); // framerate 60 fps for the game
-    // event listener triggers 60 times every second
-    createjs.Ticker.on("tick", gameLoop); 
+    canvas = document.getElementById("canvas");
+    stage = new createjs.Stage(canvas);
+    stage.enableMouseOver(20); // Enable mouse events
+    createjs.Ticker.setFPS(60); // 60 frames per second
+    createjs.Ticker.addEventListener("tick", gameLoop);
+    setupStats();
 
-    // calling main game function
-    main();
+    currentState = 0;
+    changeState(currentState);
 }
 
 // function to setup stat counting
@@ -82,22 +95,37 @@ function setupStats() {
 function gameLoop() {
     stats.begin(); // Begin measuring
 
-    play.update();
+    currentStateFunction.update();
 
-    stage.update();
 
-    stats.end(); // end measuring
+    if (stateChanged) {
+        changeState(currentState);
+    }
+
+    stage.update(); // Refreshes our stage
+
+    stats.end(); // End metering
 }
 
+    // Our Game Kicks off in here
+    function changeState(state: number) {
 
-// Our Main Game Function
-function main() {
-    // instantiate new game container
-    game = new createjs.Container();
-
-    // instantiate play state;
-    play = new states.Play();
-
-    //add game container to stage
-    stage.addChild(game);
-}
+        stateChanged = false;
+        switch (state) {
+            case 0:
+                // Instantiate Menu State
+                menu = new states.Menu();
+                currentStateFunction = menu;
+                break;
+            case 1:
+                // Instantiate Play State
+                play = new states.Play();
+                currentStateFunction = play;
+                break;
+            case 2:
+                // Instantiate Game Over State
+                gameOver = new states.GameOver();
+                currentStateFunction = gameOver;
+                break;
+        }
+    }

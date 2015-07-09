@@ -1,6 +1,21 @@
-﻿body {
+﻿@font-face {
+    font-family: 'RetroGirl';
+    src: url('../assets/fonts/MyGirlIsRetroDEMO-webfont.eot');
+    src: url('../assets/fonts/MyGirlIsRetroDEMO-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/MyGirlIsRetroDEMO-webfont.woff2') format('woff2'),
+         url('../assets/fonts/MyGirlIsRetroDEMO-webfont.woff') format('woff'),
+         url('../assets/fonts/MyGirlIsRetroDEMO-webfont.ttf') format('truetype'),
+         url('../assets/fonts/MyGirlIsRetroDEMO-webfont.svg#my_girl_is_retroregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
 }
 
 canvas {
     border: dashed 1px black;
 }
+
+

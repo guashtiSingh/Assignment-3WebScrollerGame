@@ -5,19 +5,23 @@
 ],
 
 "frames": [
-    [2, 2, 144, 89, 0, -1, -12],
-    [148, 2, 50, 50, 0, 0, 0],
-    [148, 54, 50, 50, 0, 0, 0]
+    [2, 2, 209, 67, 0, 0, 0],
+    [2, 71, 208, 65, 0, 0, 0],
+    [2, 138, 144, 89, 0, -1, -12],
+    [148, 138, 50, 50, 0, 0, 0],
+    [148, 190, 50, 50, 0, 0, 0]
 ],
 
 "animations": {
-    "cat": [0],
-    "cheese": [1],
-    "mouse": [2]
+    "playButton": [0],
+    "tryAgainButton": [1],
+    "cat": [2],
+    "cheese": [3],
+    "mouse": [4]
 },
 
 "texturepacker": [
-        "SmartUpdateHash: $TexturePacker:SmartUpdate:9a225d9729f883f9615e175480994f3d:27a2f0c4b225082ae961fbe279feca5e:cbce6b53f0f49e0bf15173c25c41f876$",
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:2d69c25c6f7e827db6627fe4baecce71:d513716c1986779e128f34f56412e5c0:cbce6b53f0f49e0bf15173c25c41f876$",
         "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
 ]
 

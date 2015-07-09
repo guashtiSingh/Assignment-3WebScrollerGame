@@ -10,8 +10,8 @@ var objects;
     var Cheese = (function (_super) {
         __extends(Cheese, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function Cheese(imageString) {
-            _super.call(this, imageString);
+        function Cheese() {
+            _super.call(this, "cheese");
             this.name = "cheese";
             this.sound = "cheesesound";
             this.dx = 5;

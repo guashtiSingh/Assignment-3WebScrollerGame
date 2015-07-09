@@ -1,4 +1,6 @@
-﻿module objects {
+﻿/// <reference path="../managers/asset.ts" />
+
+module objects {
     // Wood Class ++++++++++++++++++++++++++++++++++++++
     export class Wood extends createjs.Bitmap {
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++
@@ -7,8 +9,8 @@
         dx: number = 5;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        constructor(imageString: string) {
-            super(imageString);
+        constructor() {
+            super(assets.loader.getResult("wood"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
 
@@ -26,7 +28,7 @@
 
         private reset(): void {
             this.x = -805; //reset wood offscreen     
-            this.y = 0;                                          
+            this.y = 0;
         }
 
         //Public Methods +++++++++++++++++++++++++++++++++++++

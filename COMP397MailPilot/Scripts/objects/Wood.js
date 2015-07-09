@@ -1,3 +1,4 @@
+/// <reference path="../managers/asset.ts" />
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -10,8 +11,8 @@ var objects;
     var Wood = (function (_super) {
         __extends(Wood, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function Wood(imageString) {
-            _super.call(this, imageString);
+        function Wood() {
+            _super.call(this, assets.loader.getResult("wood"));
             this.dx = 5;
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
