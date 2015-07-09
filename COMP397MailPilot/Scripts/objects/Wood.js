@@ -6,10 +6,10 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    //Wood Class ++++++++++++++++++++++++++++++++++++++++++++
+    // Wood Class ++++++++++++++++++++++++++++++++++++++
     var Wood = (function (_super) {
         __extends(Wood, _super);
-        //Constructor ++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Wood(imageString) {
             _super.call(this, imageString);
             this.dx = 5;
@@ -17,15 +17,15 @@ var objects;
             this.height = this.getBounds().height;
             this.reset();
         }
-        //Private Methods +++++++++++++++++++++++++++++++++++++
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++
         Wood.prototype.checkBounds = function () {
-            //check if wood has left the screen
+            // check if wood has left screen
             if (this.x == 0) {
                 this.reset();
             }
         };
         Wood.prototype.reset = function () {
-            this.x = -500; //reset wood offscreen     
+            this.x = -805; //reset wood offscreen     
             this.y = 0;
         };
         //Public Methods +++++++++++++++++++++++++++++++++++++

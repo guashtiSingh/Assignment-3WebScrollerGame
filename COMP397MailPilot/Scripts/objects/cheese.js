@@ -6,20 +6,21 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    //Cheese Class ++++++++++++++++++++++++++++++++++++++++++++
+    // Cheese Class ++++++++++++++++++++++++++++++++++++++
     var Cheese = (function (_super) {
         __extends(Cheese, _super);
-        //Constructor ++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Cheese(imageString) {
             _super.call(this, imageString);
+            this.name = "cheese";
+            this.sound = "cheesesound";
             this.dx = 5;
-            this.sound = "win";
             this.reset();
         }
-        //Private Methods +++++++++++++++++++++++++++++++++++++
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++
         Cheese.prototype.checkBounds = function () {
-            //check if the cheese has left the screen
-            if (this.x > 680 + this.width) {
+            // check if island has left screen
+            if (this.x > 640 + this.width) {
                 this.reset();
             }
         };

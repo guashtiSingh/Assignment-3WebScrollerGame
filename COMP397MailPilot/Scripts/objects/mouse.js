@@ -6,19 +6,20 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    //Mouse Class ++++++++++++++++++++++++++++++++++++++++++++
+    // Mouse Class ++++++++++++++++++++++++++++++++++++++
     var Mouse = (function (_super) {
         __extends(Mouse, _super);
-        //Constructor ++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Mouse(imageString) {
             _super.call(this, imageString);
-            this.sound = "background";
+            //this.sound = "backgroundMusic";
             //up and down value
             this.x = 530;
+            createjs.Sound.play(this.sound, { "loop": -1 });
         }
-        //Public Methods +++++++++++++++++++++++++++++++++++++
+        // PUBLIC METHODS +++++++++++++++++++++++++++++++
         Mouse.prototype.update = function () {
-            this.y = stage.mouseY; //position Mouse under mouse
+            this.y = stage.mouseY; // position Mouse under mouse
         };
         return Mouse;
     })(objects.GameObject);

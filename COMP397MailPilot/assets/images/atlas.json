@@ -1,0 +1,24 @@
+{
+
+"images": [
+    "atlas.png"
+],
+
+"frames": [
+    [2, 2, 144, 89, 0, -1, -12],
+    [148, 2, 50, 50, 0, 0, 0],
+    [148, 54, 50, 50, 0, 0, 0]
+],
+
+"animations": {
+    "cat": [0],
+    "cheese": [1],
+    "mouse": [2]
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:9a225d9729f883f9615e175480994f3d:27a2f0c4b225082ae961fbe279feca5e:cbce6b53f0f49e0bf15173c25c41f876$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

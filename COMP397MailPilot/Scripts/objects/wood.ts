@@ -1,12 +1,12 @@
-﻿ module objects {
-    //Wood Class ++++++++++++++++++++++++++++++++++++++++++++
+﻿module objects {
+    // Wood Class ++++++++++++++++++++++++++++++++++++++
     export class Wood extends createjs.Bitmap {
-        //Public properties ++++++++++++++++++++++++++++++++++
+        // PUBLIC PROPERTIES ++++++++++++++++++++++++++++
         width: number;
         height: number;
         dx: number = 5;
         
-        //Constructor ++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
             this.width = this.getBounds().width;
@@ -15,17 +15,17 @@
             this.reset();
         }
 
-        //Private Methods +++++++++++++++++++++++++++++++++++++
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++
         private checkBounds(): void {
 
-            //check if wood has left the screen
+            // check if wood has left screen
             if (this.x == 0) {
                 this.reset();
             }
         }
 
         private reset(): void {
-            this.x = -500; //reset wood offscreen     
+            this.x = -805; //reset wood offscreen     
             this.y = 0;                                          
         }
 

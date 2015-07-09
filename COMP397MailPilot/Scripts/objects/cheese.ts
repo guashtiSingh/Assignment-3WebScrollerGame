@@ -1,20 +1,23 @@
-﻿module objects {
-    //Cheese Class ++++++++++++++++++++++++++++++++++++++++++++
+﻿
+module objects {
+    // Cheese Class ++++++++++++++++++++++++++++++++++++++
     export class Cheese extends objects.GameObject {
-        
-        //Constructor ++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
+
+            this.name = "cheese";
+            this.sound = "cheesesound";
             this.dx = 5;
-            this.sound = "win";
+
             this.reset();
         }
 
-        //Private Methods +++++++++++++++++++++++++++++++++++++
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++
         private checkBounds(): void {
 
-            //check if the cheese has left the screen
-            if (this.x > 680 + this.width) {
+            // check if island has left screen
+            if (this.x > 640 + this.width) {
                 this.reset();
             }
         }

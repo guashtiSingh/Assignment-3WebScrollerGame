@@ -1,18 +1,21 @@
 ﻿module objects {
-    //Mouse Class ++++++++++++++++++++++++++++++++++++++++++++
+    // Mouse Class ++++++++++++++++++++++++++++++++++++++
     export class Mouse extends objects.GameObject {
-        
-        //Constructor ++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
-            this.sound = "background";
+
+            //this.sound = "backgroundMusic";
+            
             //up and down value
             this.x = 530;
+
+            createjs.Sound.play(this.sound, { "loop": -1 });
         }
-        
-        //Public Methods +++++++++++++++++++++++++++++++++++++
+
+        // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
-            this.y = stage.mouseY; //position Mouse under mouse
+            this.y = stage.mouseY; // position Mouse under mouse
         }
     }
-}
+} 
