@@ -69,7 +69,6 @@
     <Content Include="assets\images\tryAgainButton.png" />
     <Content Include="assets\images\wood.jpg" />
     <Content Include="packages.config" />
-    <Content Include="assets\audio\backgroundMusic.ogg" />
     <Content Include="assets\audio\meow.ogg" />
     <Content Include="assets\images\atlas.json" />
     <Content Include="assets\audio\cheesesound.ogg" />
@@ -78,6 +77,7 @@
     <Content Include="assets\fonts\MyGirlIsRetroDEMO-webfont.ttf" />
     <Content Include="assets\fonts\MyGirlIsRetroDEMO-webfont.woff" />
     <Content Include="assets\fonts\MyGirlIsRetroDEMO-webfont.woff2" />
+    <Content Include="assets\audio\backgroundMusic.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

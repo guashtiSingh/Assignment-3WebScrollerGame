@@ -12,8 +12,8 @@ var objects;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Cheese() {
             _super.call(this, "cheese");
-            this.name = "cheese";
             this.sound = "cheesesound";
+            this.name = "cheese";
             this.dx = 5;
             this.reset();
         }

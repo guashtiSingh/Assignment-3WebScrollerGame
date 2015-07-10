@@ -12,8 +12,8 @@ var objects;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Cat() {
             _super.call(this, "cat");
-            this.name = "cat";
             this.sound = "meow";
+            this.name = "cat";
             this.reset();
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++

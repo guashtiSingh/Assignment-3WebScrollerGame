@@ -5,9 +5,11 @@
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor() {
             super("cat");
-            this.name = "cat";
-            this.sound = "meow";
 
+            this.sound = "meow";
+            this.name = "cat";
+            
+         
             this.reset();
         }
 

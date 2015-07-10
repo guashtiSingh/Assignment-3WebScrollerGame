@@ -4,9 +4,9 @@
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor() {
             super("cheese");
-
-            this.name = "cheese";
             this.sound = "cheesesound";
+            this.name = "cheese";
+            
             this.dx = 5;
 
             this.reset();

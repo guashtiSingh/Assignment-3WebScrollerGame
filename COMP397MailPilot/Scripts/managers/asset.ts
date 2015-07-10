@@ -9,7 +9,7 @@
        private manifest = [
         { id: "wood", src: "assets/images/wood.jpg" },
         { id: "backgroundMusic", src: "assets/audio/backgroundMusic.ogg" },
-        { id: "catsound", src: "assets/audio/catsound.ogg" },
+        { id: "cheesesound", src: "assets/audio/cheesesound.ogg" },
         { id: "meow", src: "assets/audio/meow.ogg" }
        ];
 
